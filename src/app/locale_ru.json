@@ -35,10 +35,6 @@
     "connect": "::connect"
   },
   "footer": {
-    "linkedin": "LinkedIn",
-    "github": "GitHub",
-    "telegram": "Telegram",
-    "vk": "VK",
     "copyright": "© 2025 Александр Сенько.",
     "copyright2": "All rights reserved."
   }

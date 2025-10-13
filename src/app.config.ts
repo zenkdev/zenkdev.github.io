@@ -1,8 +1,6 @@
 const config = {
   projectsVisible: false,
   contactVisible: false,
-  linkedin: "https://www.linkedin.com/in/alexander-senko-9a7b201a0/",
-  github: "https://zenkdev.github.io/",
   skills: [
     { name: "React", image: "/react-svgrepo-com.svg" },
     { name: "JavaScript", image: "/logo-js-svgrepo-com.svg" },
@@ -20,6 +18,12 @@ const config = {
     { name: "Git", image: "/git-svgrepo-com.svg" },
     { name: "Figma", image: "/figma-svgrepo-com.svg" },
   ],
+  socials: {
+    linkedin: "https://www.linkedin.com/in/alexander-senko-9a7b201a0/",
+    vk: "https://vk.com/zenkdev",
+    telegram: "https://t.me/zenkdev",
+    github: "https://zenkdev.github.io/",
+  },
 };
 
 export default config;
