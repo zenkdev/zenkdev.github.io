@@ -1,0 +1,45 @@
+{
+  "lang": "ru",
+  "title": "Александр Сенько :: Портфолио",
+  "description": "Портфолио React Разработчика",
+  "hero": {
+    "title": "> Welcome to my terminal. Initiating portfolio_v1.0...",
+    "h1": "> echo \"Привет, я Александр Сенько, React Разработчик.\"",
+    "h2": "> Создаю красивые и отзывчивые веб-приложения"
+  },
+  "about": {
+    "title": "> cat about_me.txt",
+    "text": "Я увлеченный React-разработчик со страстью к созданию динамичных и удобных для пользователя веб-приложений. Имея прочный фундамент в TypeScript и любовь к чистому коду, я стремлюсь создавать продукты, которые не только функциональны, но и приятны в использовании."
+  },
+  "skills": {
+    "title": "> ls -l skills/"
+  },
+  "projects": {
+    "title": "> get_projects.sh"
+  },
+  "contact": {
+    "title": "> send_email.sh",
+    "description": "Есть интересный проект? Давайте работать вместе!",
+    "name_label": "> enter_name:",
+    "email_label": "> enter_email:",
+    "message_label": "> enter_message:",
+    "submit_button": "::EXECUTE_SEND"
+  },
+  "header": {
+    "title": "Александр Сенько",
+    "title2": "Портфолио",
+    "about": "> about_me",
+    "skills": "> my_skills",
+    "projects": "> projects_list",
+    "contact": "> contact_me",
+    "connect": "::connect"
+  },
+  "footer": {
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "telegram": "Telegram",
+    "vk": "VK",
+    "copyright": "© 2025 Александр Сенько.",
+    "copyright2": "All rights reserved."
+  }
+}

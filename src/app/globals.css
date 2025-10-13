@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #00ff00;
+  --color-background: #0a0a0a;
+  --color-text: #00ff00;
+  --color-terminal-red: #ff3333;
+  --color-terminal-yellow: #ffff33;
+  --color-terminal-blue: #3366ff;
+  --font-mono: "IBM Plex Mono", monospace;
+  --border-radius-none: 0;
+  --box-shadow-sharp: 2px 2px 0 0 rgba(0, 0, 0, 1);
+  --box-shadow-sharp-light: 2px 2px 0 0 rgba(0, 255, 0, 0.5);
+}
+
+@utility shadow-sharp {
+  box-shadow: var(--box-shadow-sharp);
+}
+
+@utility shadow-sharp-light {
+  box-shadow: var(--box-shadow-sharp-light);
+}
+
+@layer components {
+  .text-input {
+    @apply bg-background border border-text text-text font-mono text-sm px-3 py-2 outline-none focus:ring-0 focus:border-primary;
+  }
+  .terminal-block {
+    @apply border-2 border-text p-4 shadow-sharp;
+  }
+  .terminal-button {
+    @apply inline-flex justify-center items-center py-2 px-4 border-2 border-text bg-text text-background font-mono text-sm uppercase tracking-wider transition-all duration-100 hover:bg-primary hover:text-background hover:border-primary active:shadow-none active:translate-x-[2px] active:translate-y-[2px] shadow-sharp;
+  }
+  .project-card {
+    @apply bg-background border-2 border-text overflow-hidden shadow-sharp;
+  }
+  .project-card:hover {
+    @apply translate-x-1 translate-y-1 shadow-none;
+  }
+  .tag {
+    @apply text-xs font-mono border border-primary text-primary py-1 px-2;
+  }
+}
+
+body {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><rect x="0" y="7" width="16" height="2" fill="%2300FF00"/><rect x="7" y="0" width="2" height="16" fill="%2300FF00"/></svg>')
+      8 8,
+    auto;
+  a,
+  button,
+  input,
+  textarea {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M7 0v16h2V0H7zM0 7v2h16V7H0z" fill="%2300FF00"/></svg>')
+        8 8,
+      pointer;
+  }
+}
