@@ -62,14 +62,12 @@ export default function Header() {
               {locale.header.projects}
             </a>
           )}
-          {config.contactVisible && (
-            <a
-              className="text-sm font-medium text-text hover:text-primary transition-colors"
-              href="#contact"
-            >
-              {locale.header.contact}
-            </a>
-          )}
+          <a
+            className="text-sm font-medium text-text hover:text-primary transition-colors"
+            href="#contact"
+          >
+            {locale.header.contact}
+          </a>
         </nav>
         <a
           className="hidden md:flex min-w-[84px] max-w-[480px] terminal-button"

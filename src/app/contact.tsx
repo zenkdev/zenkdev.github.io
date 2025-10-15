@@ -1,11 +1,42 @@
-import config from "@/app.config";
+"use client";
+
+import { FormEvent, useState } from "react";
 
 import locale from "./locale_ru.json";
 
 export default function Contact() {
-  if (!config.contactVisible) {
-    return null;
-  }
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (name && email && message) {
+      fetch(
+        "https://api.telegram.org/bot" +
+          process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN +
+          "/sendMessage",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            chat_id: process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID,
+            text: name + "(" + email + ")\n" + message,
+          }),
+        }
+      )
+        .catch((error) => {
+          console.error("Error sending message:", error);
+        })
+        .finally(() => {
+          setName("");
+          setEmail("");
+          setMessage("");
+        });
+    }
+  };
 
   return (
     <section className="py-16 md:py-24 border-t-2 border-text" id="contact">
@@ -16,7 +47,7 @@ export default function Contact() {
         <p className="mt-4 max-w-2xl mx-auto text-center text-lg text-text">
           {locale.contact.description}
         </p>
-        <form className="mt-10 max-w-xl mx-auto">
+        <form className="mt-10 max-w-xl mx-auto" onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
             <div>
               <label
@@ -32,6 +63,8 @@ export default function Contact() {
                   id="name"
                   name="name"
                   type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                 />
               </div>
             </div>
@@ -49,6 +82,8 @@ export default function Contact() {
                   id="email"
                   name="email"
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
             </div>
@@ -65,6 +100,8 @@ export default function Contact() {
                   id="message"
                   name="message"
                   rows={4}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
               </div>
             </div>

@@ -1,6 +1,5 @@
 const config = {
   projectsVisible: false,
-  contactVisible: false,
   skills: [
     { name: "React", image: "/react-svgrepo-com.svg" },
     { name: "JavaScript", image: "/logo-js-svgrepo-com.svg" },
