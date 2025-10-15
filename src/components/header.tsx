@@ -54,14 +54,12 @@ export default function Header() {
           >
             {locale.header.skills}
           </a>
-          {config.projectsVisible && (
-            <a
-              className="text-sm font-medium text-text hover:text-primary transition-colors"
-              href="#projects"
-            >
-              {locale.header.projects}
-            </a>
-          )}
+          <a
+            className="text-sm font-medium text-text hover:text-primary transition-colors"
+            href="#projects"
+          >
+            {locale.header.projects}
+          </a>
           <a
             className="text-sm font-medium text-text hover:text-primary transition-colors"
             href="#contact"
