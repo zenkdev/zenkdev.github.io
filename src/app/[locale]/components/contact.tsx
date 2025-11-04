@@ -1,10 +1,10 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-
-import locale from "./locale_ru.json";
+import { useIntl } from "react-intl";
 
 export default function Contact() {
+  const intl = useIntl();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -42,10 +42,10 @@ export default function Contact() {
     <section className="py-16 md:py-24 border-t-2 border-text" id="contact">
       <div className="terminal-block">
         <h2 className="text-3xl font-bold tracking-tight text-center text-primary">
-          {locale.contact.title}
+          {intl.formatMessage({ id: "contact_title" })}
         </h2>
         <p className="mt-4 max-w-2xl mx-auto text-center text-lg text-text">
-          {locale.contact.description}
+          {intl.formatMessage({ id: "contact_description" })}
         </p>
         <form className="mt-10 max-w-xl mx-auto" onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
@@ -54,7 +54,7 @@ export default function Contact() {
                 className="block text-sm font-medium text-primary"
                 htmlFor="name"
               >
-                {locale.contact.name_label}
+                {intl.formatMessage({ id: "contact_name_label" })}
               </label>
               <div className="mt-1">
                 <input
@@ -73,7 +73,7 @@ export default function Contact() {
                 className="block text-sm font-medium text-primary"
                 htmlFor="email"
               >
-                {locale.contact.email_label}
+                {intl.formatMessage({ id: "contact_email_label" })}
               </label>
               <div className="mt-1">
                 <input
@@ -92,7 +92,7 @@ export default function Contact() {
                 className="block text-sm font-medium text-primary"
                 htmlFor="message"
               >
-                {locale.contact.message_label}
+                {intl.formatMessage({ id: "contact_message_label" })}
               </label>
               <div className="mt-1">
                 <textarea
@@ -108,7 +108,7 @@ export default function Contact() {
           </div>
           <div className="mt-6 sm:col-span-2 text-center">
             <button className="terminal-button" type="submit">
-              {locale.contact.submit_button}
+              {intl.formatMessage({ id: "contact_submit_button" })}
             </button>
           </div>
         </form>

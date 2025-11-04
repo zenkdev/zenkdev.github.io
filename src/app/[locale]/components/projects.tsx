@@ -1,13 +1,16 @@
-import config from "@/app.config";
+"use client";
 
-import locale from "./locale_ru.json";
+import config from "@/app.config";
+import { useIntl } from "react-intl";
 
 export default function Projects() {
+  const intl = useIntl();
+
   return (
     <section className="py-16 md:py-24 border-t-2 border-text" id="projects">
       <div className="terminal-block">
         <h2 className="text-3xl font-bold tracking-tight text-center text-primary">
-          {locale.projects.title}
+          {intl.formatMessage({ id: "projects_title" })}
         </h2>
         <div className="mt-10 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {config.projects.map((project) => (

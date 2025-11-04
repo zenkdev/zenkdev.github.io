@@ -1,8 +1,8 @@
-import config from "@/app.config";
+import getIntl from "@/app/intl";
 
-import locale from "../app/locale_ru.json";
+export default async function Header({ locale }: { locale: string }) {
+  const intl = await getIntl(locale, "common");
 
-export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm border-b-2 border-text">
       <div className="flex items-center justify-between whitespace-nowrap px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 py-3">
@@ -37,8 +37,10 @@ export default function Header() {
             </svg>
           </div>
           <h2 className="text-lg font-bold tracking-[-0.015em] text-primary">
-            {locale.header.title}{" "}
-            <span className="text-text">:: {locale.header.title2}</span>
+            {intl.formatMessage({ id: "header_title" })}{" "}
+            <span className="text-text">
+              :: {intl.formatMessage({ id: "header_title2" })}
+            </span>
           </h2>
         </div>
         <nav className="hidden md:flex items-center gap-6">
@@ -46,32 +48,34 @@ export default function Header() {
             className="text-sm font-medium text-text hover:text-primary transition-colors"
             href="#about"
           >
-            {locale.header.about}
+            {intl.formatMessage({ id: "header_about" })}
           </a>
           <a
             className="text-sm font-medium text-text hover:text-primary transition-colors"
             href="#skills"
           >
-            {locale.header.skills}
+            {intl.formatMessage({ id: "header_skills" })}
           </a>
           <a
             className="text-sm font-medium text-text hover:text-primary transition-colors"
             href="#projects"
           >
-            {locale.header.projects}
+            {intl.formatMessage({ id: "header_projects" })}
           </a>
           <a
             className="text-sm font-medium text-text hover:text-primary transition-colors"
             href="#contact"
           >
-            {locale.header.contact}
+            {intl.formatMessage({ id: "header_contact" })}
           </a>
         </nav>
         <a
           className="hidden md:flex min-w-[84px] max-w-[480px] terminal-button"
           href="#contact"
         >
-          <span className="truncate">{locale.header.connect}</span>
+          <span className="truncate">
+            {intl.formatMessage({ id: "header_connect" })}
+          </span>
         </a>
         <button
           aria-label="Открыть меню"

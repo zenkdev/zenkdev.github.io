@@ -1,9 +1,11 @@
 import config from "@/app.config";
+import getIntl from "@/app/intl";
 
 import Social from "./social";
-import locale from "../app/locale_ru.json";
 
-export default function Footer() {
+export default async function Footer({ locale }: { locale: string }) {
+  const intl = await getIntl(locale, "common");
+
   return (
     <footer className="bg-background border-t-2 border-text">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -39,8 +41,10 @@ export default function Footer() {
           </Social>
         </div>
         <p className="mt-8 text-center text-base text-text">
-          {locale.footer.copyright}{" "}
-          <span className="text-primary">{locale.footer.copyright2}</span>
+          {intl.formatMessage({ id: "footer_copyright" })}{" "}
+          <span className="text-primary">
+            {intl.formatMessage({ id: "footer_copyright2" })}
+          </span>
         </p>
       </div>
     </footer>
