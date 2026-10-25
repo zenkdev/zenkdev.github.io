@@ -5,25 +5,24 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
-    "start": "serve ./out",
+    "start": "sirv out --single --dev",
     "lint": "eslint"
   },
   "dependencies": {
-    "next": "16.2.6",
+    "next": "16.4.3",
     "next-i18n-router": "5.5.8",
-    "react": "19.2.6",
-    "react-dom": "19.2.6",
-    "react-intl": "12.1.5"
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-intl": "12.1.5",
+    "sirv-cli": "^3.0.1"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^10.0.0",
-    "eslint-config-next": "16.2.6",
-    "serve": "14.2.6",
+    "eslint": "^10.13.0",
+    "eslint-config-next": "16.4.3",
     "tailwindcss": "^4",
     "typescript": "^6.0.0"
   }
